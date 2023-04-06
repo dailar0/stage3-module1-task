@@ -1,18 +1,20 @@
 package com.mjc.school.repository.model;
 
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Getter
+@Setter
 @AllArgsConstructor
 public class News {
-
     private final long id;
-    private final String title;
-    private final String content;
+    private String title;
+    private String content;
     private final LocalDateTime createDate;
-    private final LocalDateTime lastUpdateDate;
-    private final Author author;
+    private LocalDateTime lastUpdateDate;
+    private long authorId;
 }
