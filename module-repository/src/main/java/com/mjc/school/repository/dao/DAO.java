@@ -8,4 +8,5 @@ public interface DAO <T,S>{
     T getById(S id);
     T update(S id, T t);
     void delete(S id);
+    boolean isExist(S id);
 }

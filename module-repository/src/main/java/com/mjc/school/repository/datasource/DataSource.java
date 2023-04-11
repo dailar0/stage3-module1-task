@@ -14,10 +14,11 @@ import java.util.Random;
 
 public class DataSource {
     private static volatile DataSource INSTANCE;
-    private final static String titleFile = "/news.txt";
-    private final static String authorFile = "/author.txt";
-    private final static String contentFile = "/content.txt";
+    private final static String titleFile = "/news";
+    private final static String authorFile = "/authors";
+    private final static String contentFile = "/content";
     private final static int newsAmount = 20;
+    private final static int authorsAmount = 20;
     @Getter
     private final Collection<News> newsStorage = new ArrayList<>();
     @Getter
@@ -46,7 +47,7 @@ public class DataSource {
     }
 
     private void fillAuthors(List<String> authors) {
-        for (int i = 0; i < authors.size(); i++) {
+        for (int i = 0; i < authorsAmount; i++) {
             authorStorage.add(new Author(i, authors.get(i)));
         }
     }

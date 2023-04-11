@@ -49,4 +49,13 @@ public class AuthorInMemoryDAOImpl implements DAO<Author, Long> {
             throw new NoSuchElementException("No value present");
         }
     }
+
+    @Override
+    public boolean isExist(Long id) {
+        for (Author author : authors) {
+            if (author.getId() == id)
+                return true;
+        }
+        return false;
+    }
 }

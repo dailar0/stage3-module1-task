@@ -53,4 +53,14 @@ public class NewsInMemoryDAOImpl implements DAO<News, Long> {
             throw new NoSuchElementException("No value present");
         }
     }
+
+    @Override
+    public boolean isExist(Long id) {
+        for (News news : newsList) {
+            if (news.getId() == id) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
